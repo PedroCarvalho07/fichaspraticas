@@ -16,16 +16,9 @@ jogador2.nome = input(" Insira o nome do jogador2: ") #Pede o nome do jogador1
 jogador2.token = jogador1.token
 
 while jogador1.token == jogador2.token: #Igualamos o token 1 ao token 2
-      jogador2.token = input(" Insira o token do jogador 2")
-
+      jogador2.token = input(" Insira o token que deseja dar ao jogador 2: ")   
+      
 print (" Jogador1 chama-se {} e escolheu o token {} para jogar " .format(jogador1.nome,jogador1.token)) #Assume o nome do jogador1 e o token1
 print (" Jogador2 chama-se {} e escolheu o token {} para jogar " .format(jogador2.nome,jogador2.token)) #Assume o nome do jogador2 e o token2
 
 
-class Tabuleiro():
-    
-    def __init__(self): #Inicia a funcao e chama a funcao sozinha atraves do self
-
-        self.tabuleiro = [ [None, None, None], 
-                           [None, None, None],  #Vai chamar a funcao sozinha, neste caso iniciar o tabuleiro aqui criado
-                           [None, None, None] ] 

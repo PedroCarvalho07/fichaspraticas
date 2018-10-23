@@ -1,10 +1,27 @@
-#TRABALHO PRATICO 1
-#Pedro Carvalho
-#Tozé Rocha
+class Jogador(): #Classe do Jogador
+
+    def __init__(self): #Iniciar a funcao para chamar o nome e o token sozinhos
+        self.nome = None #O none faz com que o espaço para o nome esteja completamente vazio
+        self.token = None #O none faz com que o espaço para o nome esteja completamente vazio
+
+#DadosJogador 1
+jogador1 = Jogador() #Igualar o jogador2 há variável jogador 
+jogador1.nome = input(" Insira o nome do jogador1: ") #Pede o nome do jogador1
+jogador1.token = input(" Insira o token que deseja dar ao jogador1: ") #Pede o token ao jogador
+
+#DadosJogador 2
+jogador2 = Jogador() #Igualar o jogador2 há variável jogador 
+jogador2.nome = input(" Insira o nome do jogador2: ") #Pede o nome do jogador1
+
+jogador2.token = jogador1.token
+
+while jogador1.token == jogador2.token: #Igualamos o token 1 ao token 2
+      jogador2.token = input(" Insira o token que deseja dar ao jogador 2: ")   
+      
+print (" Jogador1 chama-se {} e escolheu o token {} para jogar " .format(jogador1.nome,jogador1.token)) #Assume o nome do jogador1 e o token1
+print (" Jogador2 chama-se {} e escolheu o token {} para jogar " .format(jogador2.nome,jogador2.token)) #Assume o nome do jogador2 e o token2
 
 
-#Numero maximo de jogadas no inicio do jogo
-jogadas_max = 0
 
 #Dados Class Tabuleiro
 class tabuleiro():
@@ -77,46 +94,10 @@ class tabuleiro():
             global winner
             winner = True
         return winner
-    
-#Dados Class Jogador
-class jogador():
 
-#Definir uma função para chamar o nome e o token
-#Definir uma função para validar o token do jogador   
-    def __init__(self):
-        self.nome = ""
-        self.token = ""
-
-    def validartokenjogador(self):
-        while jogador1.token == jogador2.token:
-            print("Token já utilizado do jogador 1 ")
-            jogador2.token = input("Por favor escolha outro token: ")
-        return self.token
-        
-#DadosJogador 1
-jogador1 = jogador()
-jogador1.nome = input("Insira o nome do jogador1: ")
-jogador1.token = input("Insira o token que deseja dar ao jogador1: ")
-
-#DadosJogador 2
-jogador2 = jogador()
-jogador2.nome = input("Insira o nome do jogador2: ")
-jogador2.token = input("Insira o token que deseja dar ao jogador2: ")
-
-#Dadosfinais
-jogador()
-print (" Jogador1 chama-se {} e escolheu o token {} para jogar" .format(jogador1.nome,jogador1.token))
-print (" Jogador2 chama-se {} e escolheu o token {} para jogar" .format(jogador2.nome,jogador2.token))
-
-#DadosTabuleiro
-#DadosdosJogadores
-tabuleiro1 = tabuleiro()
-jogador1.validartokenjogador()    
+tabuleiro1 = tabuleiro()    
 tabuleiro1.__str__()
 
-#DadosJogar
-#O ciclo aqui criado serve para limitar as 9 jogadas e para o jogador poder desistir caso opte por essa opçao
-#O ciclo também permite verificar se após as 9 jogados temos um empate
 print(tabuleiro1)
 winner = False
 while jogadas_max < 9:
@@ -145,8 +126,3 @@ while jogadas_max < 9:
         print("O vencedor deste jogo é o : ",jogador2.nome) 
         break
     jogadas_max += 1
-
-
-
-
-    #FINAL

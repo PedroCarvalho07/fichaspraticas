@@ -4,11 +4,11 @@ Operacao = input(" Escolha a opçao que deseja realizar : +-*/ ")
 
 if Operacao == "+":
         resultado=(Numero1 + Numero2)
-if Operacao == "-":
+elif Operacao == "-":
         resultado=(Numero1 - Numero2)
-if Operacao == "*":
+elif Operacao == "*":
         resultado=(Numero1 * Numero2)
-if Operacao == "/":
+elif Operacao == "/":
         resultado=(Numero1 / Numero2)
 
 print(" o resultado é :", resultado)

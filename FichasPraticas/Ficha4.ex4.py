@@ -17,4 +17,3 @@ def lernotas():
     return 
 
 lernotas()
-
